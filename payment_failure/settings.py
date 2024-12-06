@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'Dashboard',
         'CLIENT': {
-           'host': 'mongodb+srv://abhaintern:BzlCMiNOsJ536N6G@cluster0.wyqg4.mongodb.net/',
+           'host': 'mongodb+srv://abhaintern:BzlCMiNOsJ536N6G@cluster0.wyqg4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
         }
     }
 }
