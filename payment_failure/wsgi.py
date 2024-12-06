@@ -12,6 +12,7 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'payment_failure.settings')
+os.environ['http_proxy'] = "http://proxy.server:3128"
 
 application = get_wsgi_application()
 
