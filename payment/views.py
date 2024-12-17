@@ -12,6 +12,7 @@ def dashboard(request):
 @csrf_exempt
 def webhook(request):
     payload = json.loads(request.body)["data"]["object"]
-    payment = Payments(transaction_id=payload["id"], amount=payload["amount"], status=payload["status"], failure_reason=payload.get("failure_message", "-"))
+    status = "failed" if payload["status"] == "requires_payment_method" else payload["status"]
+    payment = Payments(transaction_id=payload["id"], amount=payload["amount"], status=status, failure_reason=payload.get("last_payment_error", {}).get("message", "-"))
     payment.save()
     return JsonResponse({"messsage": "success"})
