@@ -68,6 +68,7 @@ This project is a Payment Failure Analysis Dashboard that visualizes payment fai
 
 4. **Configure MongoDB**:
    - Update `settings.py` in the Django project:
+```python
 
 DATABASES = {
     'default': {
@@ -78,6 +79,7 @@ DATABASES = {
         }
     }
 }
+```
 5. **Run Migrations**:
    ```bash
    python manage.py makemigrations
